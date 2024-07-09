@@ -22,24 +22,6 @@ public class MineFrame extends JFrame implements ActionListener {
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Minesweeper 3000");
-
-		// frame.pack();
-		// frame.setSize(500, 500);
-		// frame.setLocationRelativeTo(null);
-		// frame.setVisible(true);
-
-		// frame.setSize(500, 500);
-		// frame.setResizable(false);
-
-		// JPanel panels = new JPanel();
-		// panels.setSize(50, 50);
-		// panels.setBackground(Color.red);
-		// frame.add(panels);
-
-		// Grid myGrid = new Grid();
-
-		// setLayout(new GridBagLayout());
-
 		frame.setLayout(new GridLayout(myGrid.getNumRows(), myGrid.getNumColumns()));
 
 		int rows = myGrid.getNumRows();
@@ -49,8 +31,6 @@ public class MineFrame extends JFrame implements ActionListener {
 
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < columns; j++) {
-				// frame.add(new JButton(Integer.toString(i) + " " + Integer.toString(j)));
-				// buttons[i][j] = new JButton(Integer.toString(i) + " " + Integer.toString(j));
 				buttons[i][j] = new JButton();
 
 				buttons[i][j].setSize(100, 50);
@@ -58,24 +38,8 @@ public class MineFrame extends JFrame implements ActionListener {
 				frame.add(buttons[i][j]);
 			}
 		}
-		// System.out.println(myGrid.getNumRows());
-		// System.out.println();
 
-		/*
-		 * labels = new JLabel[rows][columns];
-		 * 
-		 * for (int i=0; i<rows; i++) { for (int j=0; j<columns;j++){
-		 * 
-		 * //labels[i][j] = new JLabel(Integer.toString(myGrid.getCountAtLocation(i,
-		 * j))); //labels[i][j].setText(Integer.toString(myGrid.getCountAtLocation(i,
-		 * j))); //frame.add(labels[i][j]); labels[i][j] = new
-		 * JLabel(Boolean.toString(myGrid.isBombAtLocation(i, j)));
-		 * labels[i][j].setText(Boolean.toString(myGrid.isBombAtLocation(i, j)));
-		 * frame.add(labels[i][j]); } }
-		 */
 
-		// frame.pack();
-		// frame.setSize(500,500);
 		frame.pack();
 		frame.setSize(500, 500);
 		frame.setLocationRelativeTo(null);
@@ -90,7 +54,6 @@ public class MineFrame extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		// Grid myGrid = new Grid();
 
 		int rows = myGrid.getNumRows();
 		int columns = myGrid.getNumColumns();
@@ -119,12 +82,8 @@ public class MineFrame extends JFrame implements ActionListener {
 			for (int j = 0; j < columns; j++) {
 
 				if (e.getSource() == buttons[i][j]) {
-					// System.out.println(i +""+ j);
-					// System.out.println(myGrid.getCountAtLocation(i, j));
 
 					buttons[i][j].setText(Integer.toString(counts[i][j]));
-					// buttons[i][j].setText(Boolean.toString(myGrid.isBombAtLocation(i, j)) + "" +
-					// Integer.toString(counts[i][j]));
 					buttons[i][j].setEnabled(false);
 
 					if (bombs[i][j]) {
@@ -142,24 +101,6 @@ public class MineFrame extends JFrame implements ActionListener {
 							dispose();
 							frame.dispose();
 						}
-
-//						JFrame lose = new JFrame();
-//						lose.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//						lose.setTitle("LOSE");
-//						
-//						lose.pack();
-//						lose.setSize(200, 100);
-//						lose.setLocationRelativeTo(null);
-//
-//						
-//						lose.setVisible(true);
-//						//lose.setSize(200, 100);
-//						
-//						JLabel loser = new JLabel();
-//						loser.setText("You Lost!");
-//						loser.setHorizontalAlignment(JLabel.CENTER);
-//						
-//						lose.add(loser);
 
 					}
 
@@ -221,7 +162,6 @@ public class MineFrame extends JFrame implements ActionListener {
 						}
 					}
 
-					// frame.remove(buttons[i][j]);
 
 				}
 
